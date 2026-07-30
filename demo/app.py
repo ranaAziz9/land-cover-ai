@@ -166,7 +166,6 @@ def predict_fusion_image(image):
 col1, col2 = st.columns(2, gap="large")
 
 # --- Column 1: Upload Section ---
-# --- Column 1: Upload Section ---
 with col1:
     with st.container(border=True):
         st.subheader("Upload Satellite Image")
@@ -189,12 +188,12 @@ with col1:
 
             st.image(
                 cv2.cvtColor(img, cv2.COLOR_BGR2RGB),
-                width="stretch"
+                use_container_width=True
             )
 
             if st.button(
                 "Predict Uploaded Image",
-                width="stretch"
+                use_container_width=True
             ):
                 with st.spinner("Analyzing image..."):
                     pred, conf = predict_fusion_image(img)
@@ -249,13 +248,12 @@ with col2:
                     cv2.COLOR_BGR2RGB
                 ),
                 caption=selected_sample,
-                width="stretch"
+                use_container_width=True
             )
-
 
             if st.button(
                 "Predict Sample Image",
-                width="stretch"
+                use_container_width=True
             ):
 
                 with st.spinner("Analyzing sample..."):
@@ -263,7 +261,6 @@ with col2:
                     pred, conf = predict_fusion_image(
                         sample_img
                     )
-
 
                 st.markdown(
                 f"""
