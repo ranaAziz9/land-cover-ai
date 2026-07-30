@@ -105,12 +105,12 @@ st.markdown(
 
 Land Cover AI is an artificial intelligence platform designed to classify satellite images into distinct land cover categories.
 
-The system utilizes advanced feature extraction combining color histograms and local texture patterns (LBP) to categorize satellite images.
+The system utilizes advanced feature extraction techniques combining color histograms and local texture patterns (LBP) to analyze and categorize satellite imagery.
 
+For reliable predictions, uploaded images should have similar characteristics to the provided satellite samples, including RGB satellite imagery with comparable visual patterns and land-cover features.
 <br><br>
 
-Upload an image or choose a sample from the gallery to test the classification model.
-
+Upload a suitable satellite image or choose a sample from the gallery to test the classification model.
 </div>
 """,
 unsafe_allow_html=True
