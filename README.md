@@ -43,6 +43,9 @@ By integrating complementary visual information, the model aims to achieve a ric
 
 The project uses the EuroSAT dataset, a benchmark dataset for satellite image classification.
 
+Dataset source:
+
+🔗 https://github.com/phelber/EuroSAT
 Dataset characteristics:
 
 - Total images: **27,000 satellite images**
@@ -226,7 +229,6 @@ Demo:
 https://land-cover-ai-h6bm6xjvc6r9krtiw26c4p.streamlit.app/
 
 
-(Add demo screenshot here)
 
 
 ---
