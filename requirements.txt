@@ -1,9 +1,9 @@
-tensorflow
+tensorflow-cpu
 numpy
-opencv-python
+opencv-python-headless
 scikit-image
 scikit-learn
 joblib
+streamlit
 matplotlib
 pandas
-jupyter
