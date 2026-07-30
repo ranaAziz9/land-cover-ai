@@ -1,6 +1,26 @@
 # Satellite Land Cover Classification Using ANN Fusion Model 🌍
 
-## Overview
+[![Open Demo](https://img.shields.io/badge/Demo-Streamlit-brightgreen)](https://land-cover-ai-h6bm6xjvc6r9krtiw26c4p.streamlit.app/)
+
+
+## 🚀 Live Demo
+
+Try the deployed application directly:
+
+🔗 **Streamlit Demo:**  
+https://land-cover-ai-h6bm6xjvc6r9krtiw26c4p.streamlit.app/
+
+No installation is required. The interactive demo allows users to:
+
+- Upload satellite images.
+- Test sample satellite images.
+- Predict land-cover categories.
+- View prediction confidence scores.
+
+
+---
+
+# Overview
 
 This project presents a satellite image classification system for identifying different land-cover categories using an Artificial Neural Network (ANN) combined with feature fusion techniques.
 
@@ -51,7 +71,7 @@ The dataset contains the following categories:
 The dataset was divided into three subsets:
 
 | Dataset | Number of Images | Percentage |
-|---|---|---|
+|---|---:|---:|
 | Training | 18,900 | 70% |
 | Validation | 5,400 | 20% |
 | Test | 2,700 | 10% |
@@ -123,47 +143,41 @@ The fused feature vector was used as input to an Artificial Neural Network (ANN)
 
 Pipeline:
 
+```
 Satellite Image
 
-    ↓
-
+        ↓
 
 Feature Extraction
 
-    ↓
-
+        ↓
 
 HSV Color Features + LBP Texture Features
 
-    ↓
-
+        ↓
 
 Feature Fusion
 
-    ↓
-
+        ↓
 
 Feature Scaling
 
-    ↓
-
+        ↓
 
 Artificial Neural Network (ANN)
 
-    ↓
-
+        ↓
 
 Land Cover Classification
+```
 
 
-
-Model details:
+## Model Details
 
 - Model type: Artificial Neural Network
 - Input: Fused feature vector
 - Output: Land-cover class probabilities
-- Activation: Classification output layer
-- Evaluation: Accuracy, Precision, Recall, and F1-score
+- Evaluation metrics: Accuracy, Precision, Recall, and F1-score
 
 
 ---
@@ -174,7 +188,7 @@ Different feature extraction strategies were evaluated to analyze the effect of 
 
 
 | Approach | Accuracy | Precision | Recall | F1-score |
-|---|---|---|---|---|
+|---|---:|---:|---:|---:|
 | ANN + LBP | 77.3% | 76.2% | 76.5% | 76.3% |
 | ANN + Color Features | 78.3% | 77.6% | 77.6% | 77.2% |
 | ANN + Color + LBP Fusion | **89.6%** | **89.1%** | **89.0%** | **89.0%** |
@@ -201,10 +215,15 @@ An interactive Streamlit application was developed to test the trained model.
 
 The demo allows users to:
 
-- Upload a satellite image.
+- Upload satellite images.
 - Select example satellite images.
-- Predict the land-cover category.
-- Display the confidence score.
+- Predict land-cover categories.
+- Display confidence scores.
+
+
+Demo:
+
+https://land-cover-ai-h6bm6xjvc6r9krtiw26c4p.streamlit.app/
 
 
 (Add demo screenshot here)
@@ -212,52 +231,86 @@ The demo allows users to:
 
 ---
 
-# How to Run
+# Local Setup (Optional)
 
-Clone the repository:
+The project can also be run locally.
+
+### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/ranaAziz9/land-cover-ai.git
 
-cd LandCover
+cd land-cover-ai
+```
 
-Install dependencies:
 
-bash
-pip install -r requirements.txt
+### 2. Install dependencies
 
-Run the Streamlit demo:
+```bash
+pip install -r demo/requirements.txt
+```
 
-bash
-cd demo
 
-streamlit run app.py
+### 3. Run Streamlit application
 
-Project Structure
-plaintext
+```bash
+streamlit run demo/app.py
+```
+
+
+---
+
+# Project Structure
+
+```
 LandCover/
-│
-├── demo/
-│   ├── app.py
-│   └── requirements.txt
-│
-├── model/
-│   ├── ann_fusion_model.h5
-│   ├── fusion_scaler.pkl
-│   └── fusion_label_encoder.pkl
-│
-├── samples/
-│   ├── forest.jpg
-│   ├── river.jpg
-│   └── seaLake.jpg
-│
-├── notebooks/
-│   └── ANN_+_Fusion.ipynb
-│
-├── requirements.txt
-└── README.md
 
-Technologies
+│
+
+├── demo/
+
+│   ├── app.py
+
+│   └── requirements.txt
+
+│
+
+├── model/
+
+│   ├── ann_fusion_model.h5
+
+│   ├── fusion_scaler.pkl
+
+│   └── fusion_label_encoder.pkl
+
+│
+
+├── samples/
+
+│   ├── forest.jpg
+
+│   ├── river.jpg
+
+│   └── seaLake.jpg
+
+│
+
+├── notebooks/
+
+│   └── ANN_+_Fusion.ipynb
+
+│
+
+├── requirements.txt
+
+└── README.md
+```
+
+
+---
+
+# Technologies
+
 - Python
 - TensorFlow / Keras
 - OpenCV
@@ -267,12 +320,21 @@ Technologies
 - NumPy
 - Matplotlib
 
-Future Improvements
+
+---
+
+# Future Improvements
+
 - Compare the fusion approach with CNN-based feature extraction.
 - Experiment with pretrained deep learning models.
 - Improve generalization using data augmentation.
 - Deploy the model as a cloud-based application.
 
-Author
-Rana Alzahrani
+
+---
+
+# Author
+
+**Rana Alzahrani**
+
 Computer Science Graduate | Artificial Intelligence
