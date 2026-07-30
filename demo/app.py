@@ -166,50 +166,113 @@ def predict_fusion_image(image):
 col1, col2 = st.columns(2, gap="large")
 
 # --- Column 1: Upload Section ---
+# --- Column 1: Upload Section ---
 with col1:
     with st.container(border=True):
         st.subheader("Upload Satellite Image")
-        uploaded_file = st.file_uploader("Choose an image file", type=["jpg", "png", "jpeg"])
-        
+
+        uploaded_file = st.file_uploader(
+            "Choose an image file",
+            type=["jpg", "png", "jpeg"]
+        )
+
         if uploaded_file:
-            file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-            img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
-            st.image(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), use_container_width=True)
-            
-            if st.button("Predict Uploaded Image", use_container_width=True):
+            file_bytes = np.asarray(
+                bytearray(uploaded_file.read()),
+                dtype=np.uint8
+            )
+
+            img = cv2.imdecode(
+                file_bytes,
+                cv2.IMREAD_COLOR
+            )
+
+            st.image(
+                cv2.cvtColor(img, cv2.COLOR_BGR2RGB),
+                width="stretch"
+            )
+
+            if st.button(
+                "Predict Uploaded Image",
+                width="stretch"
+            ):
                 with st.spinner("Analyzing image..."):
                     pred, conf = predict_fusion_image(img)
-                st.markdown(f"""
+
+                st.markdown(
+                f"""
                 <div class="result-box">
                 <b>Predicted Class:</b> {pred}<br>
-                <span style="font-size:15px; color:#e0f2fe;">Confidence: {conf:.2%}</span>
+                <span style="font-size:15px; color:#e0f2fe;">
+                Confidence: {conf:.2%}
+                </span>
                 </div>
-                """, unsafe_allow_html=True)
+                """,
+                unsafe_allow_html=True
+                )
+
 
 # --- Column 2: Gallery Section ---
 with col2:
     with st.container(border=True):
+
         st.subheader("Satellite Image Gallery")
+
         samples = {
             "Forest": "forest.jpg",
             "River": "river.jpg",
             "Sea / Lake": "seaLake.jpg"
         }
-        selected_sample = st.selectbox("Choose a sample image:", list(samples.keys()))
+
+        selected_sample = st.selectbox(
+            "Choose a sample image:",
+            list(samples.keys())
+        )
+
         sample_path = SAMPLE_DIR / samples[selected_sample]
-        
-        sample_img = cv2.imread(str(sample_path))
+
+        sample_img = cv2.imread(
+            str(sample_path)
+        )
+
         if sample_img is None:
-            st.error(f"Cannot load image: {sample_path}")
+
+            st.error(
+                f"Cannot load image: {sample_path}"
+            )
+
         else:
-            st.image(cv2.cvtColor(sample_img, cv2.COLOR_BGR2RGB), caption=selected_sample, use_container_width=True)
-            
-            if st.button("Predict Sample Image", use_container_width=True):
+
+            st.image(
+                cv2.cvtColor(
+                    sample_img,
+                    cv2.COLOR_BGR2RGB
+                ),
+                caption=selected_sample,
+                width="stretch"
+            )
+
+
+            if st.button(
+                "Predict Sample Image",
+                width="stretch"
+            ):
+
                 with st.spinner("Analyzing sample..."):
-                    pred, conf = predict_fusion_image(sample_img)
-                st.markdown(f"""
+
+                    pred, conf = predict_fusion_image(
+                        sample_img
+                    )
+
+
+                st.markdown(
+                f"""
                 <div class="result-box">
                 <b>Predicted Class:</b> {pred}<br>
-                <span style="font-size:15px; color:#e0f2fe;">Confidence: {conf:.2%}</span>
+                <span style="font-size:15px; color:#e0f2fe;">
+                Confidence: {conf:.2%}
+                </span>
                 </div>
-                """, unsafe_allow_html=True)
+                """,
+                unsafe_allow_html=True
+                )
