@@ -103,14 +103,14 @@ st.markdown(
 
 <h3>Overview</h3>
 
-Land Cover AI is an artificial intelligence platform designed to classify satellite images into distinct land cover categories.
+Land Cover AI is an intelligent system that analyzes satellite images and identifies different types of land areas, such as forests, rivers, and water bodies.
 
-The system utilizes advanced feature extraction techniques combining color histograms and local texture patterns (LBP) to analyze and categorize satellite imagery.
+For the best results, please upload satellite images with similar characteristics to the provided examples. The system is designed to recognize satellite imagery and may not provide accurate predictions for regular photos.
 
-For reliable predictions, uploaded images should have similar characteristics to the provided satellite samples, including RGB satellite imagery with comparable visual patterns and land-cover features.
 <br><br>
 
-Upload a suitable satellite image or choose a sample from the gallery to test the classification model.
+Upload a satellite image or select an example from the gallery to explore the land-cover classification results.
+
 </div>
 """,
 unsafe_allow_html=True
