@@ -1,7 +1,7 @@
-streamlit
-tensorflow
-numpy
-opencv-python
-scikit-image
-scikit-learn
-joblib
+streamlit==1.39.0
+tensorflow==2.16.2
+numpy==1.26.4
+opencv-python-headless==4.10.0.84
+scikit-image==0.24.0
+scikit-learn==1.5.2
+joblib==1.4.2
